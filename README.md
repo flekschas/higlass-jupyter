@@ -17,6 +17,7 @@ Development
 First make sure you have Jupyter Notebook and nbextensions installed. Use `--sys-prefix` to install into python's sys.prefix, useful for instance in virtual environments, such as with conda.
 
 	$ pip install jupyter[complete]
+	$ jupyter nbextension enable --py --sys-prefix widgetsnbextension
 	$ pip install jupyter_contrib_nbextensions
 	$ jupyter contrib nbextension install --sys-prefix
 
