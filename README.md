@@ -3,14 +3,14 @@ jupyter-higlass
 
 HiGlass Widget Extension for your Jupyter Notebook
 
-Jupyter and NB Extensions
+Jupyter and Notebook Extensions
 -------------------------
 First make sure you have Jupyter Notebook and the [Widgets](https://ipywidgets.readthedocs.io/en/stable/) Notebook Extension installed. If you are using a virtual environment such as a conda environment, it is best to always add the `--sys-prefix` option when registering nbextensions so that the extension code is registered under the environment's prefix, `{sys.prefix}/share/jupyter/nbextensions/`.
 
 	$ pip install jupyter[complete]
 	$ jupyter nbextension enable --py --sys-prefix widgetsnbextension
 
-Optionally, the following [community extension package](http://jupyter-contrib-nbextensions.readthedocs.io/en/latest/) adds the nbextension panel to your Jupyter Notebook App. Not necessary, but nice to have.
+Optionally, the following [Unofficial Community Extensions](http://jupyter-contrib-nbextensions.readthedocs.io/en/latest/) package adds the nbextension panel to your Jupyter Notebook App, as well as a bunch of other extensions. Not necessary, but nice to have.
 
 	$ pip install jupyter_contrib_nbextensions
 	$ jupyter contrib nbextension install --sys-prefix
