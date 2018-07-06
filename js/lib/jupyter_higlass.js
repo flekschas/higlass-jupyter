@@ -51,7 +51,6 @@ var HiGlassDisplayModel = widgets.DOMWidgetModel.extend({
 var HiGlassDisplayView = widgets.DOMWidgetView.extend({
   
     render: function() {
-        console.log('this.model:', this.model.get('viewconf'));
         this.hgcontainer = document.createElement('div');
         // this.hgcontainer.style.margin = '1em';
         // this.hgcontainer.style.boxSizing = 'border-box';
