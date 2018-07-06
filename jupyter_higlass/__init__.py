@@ -19,7 +19,13 @@ class HiGlassDisplay(widgets.DOMWidget):
     _model_name = Unicode('HiGlassDisplayModel').tag(sync=True)
     _view_module = Unicode('jupyter_higlass').tag(sync=True)
     _model_module = Unicode('jupyter_higlass').tag(sync=True)
+
     _model_data = List([]).tag(sync=True)
+    viewconf = Unicode('{}').tag(sync=True)
+
+    def __init__(self, **kwargs):
+        # self.viewconf = viewconf
+        super(HiGlassDisplay, self).__init__(**kwargs)
 
     # @default('layout')
     # def _default_layout(self):

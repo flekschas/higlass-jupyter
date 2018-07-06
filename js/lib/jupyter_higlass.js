@@ -49,7 +49,9 @@ var HiGlassDisplayModel = widgets.DOMWidgetModel.extend({
 
 // Custom View. Renders the widget model.
 var HiGlassDisplayView = widgets.DOMWidgetView.extend({
+  
     render: function() {
+        console.log('this.model:', this.model.get('viewconf'));
         this.hgcontainer = document.createElement('div');
         // this.hgcontainer.style.margin = '1em';
         // this.hgcontainer.style.boxSizing = 'border-box';
@@ -64,9 +66,11 @@ var HiGlassDisplayView = widgets.DOMWidgetView.extend({
         this.hgcontainer.appendChild(this.hgdisplay);
         this.el.appendChild(this.hgcontainer);
 
+        const minimalConfig = this.model.get('viewconf');
+
         hglib.createHgComponent(
             this.hgdisplay,
-            minimalConfig,
+            JSON.parse(minimalConfig),
             { bounded: true },
             function (api) {
                 window.hgApi = api;

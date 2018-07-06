@@ -33,6 +33,57 @@ Development
 
 The Javascript source code is in the repo's `js` directory. To recompile the static assets after editing the source, use `python setup.py jsdeps` or run webpack.
 
+Example
+-------
+
+A working example can be found in ``notebooks/Example.ipynb``. The workflow is simple. Create a viewconf
+and then pass it to the HiGlassComponent:
+
+```
+minimal_config = {
+  "trackSourceServers": [
+    "http://higlass.io/api/v1"
+  ],
+  "exportViewUrl": "http://higlass.io/api/v1/viewconfs",
+  "editable": "true",
+  "zoomFixed": "false",
+  "views": [
+    {
+      "layout": {
+        "w": 12,
+        "h": 6,
+        "x": 0,
+        "y": 0
+      },
+      "initialXDomain": [
+        0,
+        3000000000
+      ],
+      "initialYDomain": [
+        0,
+        3000000000
+      ],
+      "tracks": {
+        "left": [],
+        "right": [],
+        "center":  [{
+                "name": "Rao et al. (2014) GM12878 MboI (allreps) 1kb",
+                "server": "http://higlass.io/api/v1",
+                "tilesetUid": "CQMd6V_cRw6iCI_-Unl3PQ",
+                "type": "heatmap"
+              }],
+        "top": [],
+        "bottom": []
+      }
+    }
+  ]
+}
+
+import json
+import jupyter_higlass
+jupyter_higlass.HiGlassDisplay(viewconf=json.dumps(minimal_config))
+```
+
 
 Uninstall
 ---------
