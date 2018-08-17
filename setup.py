@@ -94,7 +94,7 @@ class NPM(Command):
     def should_run_npm_install(self):
         package_json = os.path.join(node_root, 'package.json')
         node_modules_exists = os.path.exists(self.node_modules)
-        return self.has_npm()
+        return self.has_npm() and not node_modules_exists
 
     def run(self):
         has_npm = self.has_npm()
@@ -104,11 +104,15 @@ class NPM(Command):
         env = os.environ.copy()
         env['PATH'] = npm_path
 
+        npmName = self.get_npm_name();
+
         if self.should_run_npm_install():
             log.info("Installing build dependencies with npm.  This may take a while...")
-            npmName = self.get_npm_name();
             check_call([npmName, 'install'], cwd=node_root, stdout=sys.stdout, stderr=sys.stderr)
             os.utime(self.node_modules, None)
+
+        
+        check_call([npmName, 'run', 'build'], cwd=node_root, stdout=sys.stdout, stderr=sys.stderr)
 
         for t in self.targets:
             if not os.path.exists(t):
