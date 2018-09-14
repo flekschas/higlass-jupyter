@@ -67,7 +67,7 @@ class NPM(Command):
 
     targets = [
         os.path.join(here, 'jupyter_higlass', 'static', 'extension.js'),
-        os.path.join(here, 'jupyter_higlass', 'static', 'index.js')
+        os.path.join(here, 'jupyter_higlass', 'static', 'index.js'),
     ]
 
     def initialize_options(self):
