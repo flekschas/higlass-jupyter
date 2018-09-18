@@ -21,15 +21,15 @@ Development
 
 1\. Install this repo as a Python package. With pip's `-e` option, the package is installed in developer (a.k.a. editable) mode, such that the `jupyter_higlass` package is linked Python's `site-packages` directory rather than copied there. This way the package can be edited directly in the repo with no need for build or re-installing.
 
-    $ git clone https://github.com/nvictus/jupyter-higlass.git
+    $ git clone https://github.com/pkerpedjiev/higlass-jupyter.git
     $ cd jupyter-higlass
     $ pip install -e .
 
 2\. Compile and install the Javascript notebook extension (requires npm). With the `--symlink` option, the compiled Javascript in `jupyter_higlass/static` is linked to the extension registry rather than copied. This way both the Python package and front-end assets are linked from the repo.
 
 	$ python setup.py jsdeps
-    $ jupyter nbextension install --py --sys-prefix --symlink jupyter_higlass
-    $ jupyter nbextension enable --py --sys-prefix jupyter_higlass
+    $ jupyter nbextension install --py --sys-prefix --symlink prefix higlass_jupyter
+    $ jupyter nbextension enable --py --sys-prefix prefix higlass_jupyter
 
 The Javascript source code is in the repo's `js` directory. To recompile the static assets after editing the source, use `python setup.py jsdeps` or run webpack.
 
@@ -91,7 +91,7 @@ Uninstall
 To uninstall both the Python package and Javascript extension:
 
 	$ pip uninstall jupyter_higlass
-	$ jupyter nbextension uninstall --py --sys-prefix jupyter_higlass
+	$ jupyter nbextension uninstall --py --sys-prefix higlass_jupyter
 
 
 Resources
