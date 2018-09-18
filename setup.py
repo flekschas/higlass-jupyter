@@ -66,8 +66,8 @@ class NPM(Command):
     node_modules = os.path.join(node_root, 'node_modules')
 
     targets = [
-        os.path.join(here, 'jupyter_higlass', 'static', 'extension.js'),
-        os.path.join(here, 'jupyter_higlass', 'static', 'index.js'),
+        os.path.join(here, 'higlass_jupyter', 'static', 'extension.js'),
+        os.path.join(here, 'higlass_jupyter', 'static', 'index.js'),
     ]
 
     def initialize_options(self):
@@ -125,20 +125,20 @@ class NPM(Command):
         update_package_data(self.distribution)
 
 version_ns = {}
-with open(os.path.join(here, 'jupyter_higlass', '_version.py')) as f:
+with open(os.path.join(here, 'higlass_jupyter', '_version.py')) as f:
     exec(f.read(), {}, version_ns)
 
 setup_args = {
-    'name': 'jupyter_higlass',
+    'name': 'higlass_jupyter',
     'version': version_ns['__version__'],
     'description': 'HiGlass in your Jupyter Notebook',
     'long_description': LONG_DESCRIPTION,
     'include_package_data': True,
     'data_files': [
-        ('share/jupyter/nbextensions/jupyter_higlass', [
-            'jupyter_higlass/static/extension.js',
-            'jupyter_higlass/static/index.js',
-            'jupyter_higlass/static/index.js.map',
+        ('share/jupyter/nbextensions/higlass_jupyter', [
+            'higlass_jupyter/static/extension.js',
+            'higlass_jupyter/static/index.js',
+            'higlass_jupyter/static/index.js.map',
         ]),
     ],
     'install_requires': [
@@ -155,7 +155,7 @@ setup_args = {
 
     'author': 'Nezar Abdennur',
     'author_email': 'nabdennur@gmail.com',
-    'url': 'https://github.com/nvictus/jupyter-higlass',
+    'url': 'https://github.com/pkerpedjiev/higlass-jupyter',
     'keywords': [
         'ipython',
         'jupyter',

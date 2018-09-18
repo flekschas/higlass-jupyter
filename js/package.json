@@ -1,12 +1,12 @@
 {
-  "name": "jupyter_higlass",
+  "name": "higlass_jupyter",
   "version": "0.1.0",
   "description": "HiGlass in your Jupyter Notebook",
-  "author": "Nezar Abdennur",
+  "author": "Nezar Abdennur, Peter Kerpedjiev",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nvictus/jupyter-higlass.git"
+    "url": "https://github.com/pkerpedjiev/higlass-jupyter.git"
   },
   "keywords": [
     "jupyter",

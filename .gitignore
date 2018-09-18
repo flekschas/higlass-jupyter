@@ -8,7 +8,7 @@ build/
 node_modules/
 
 # Compiled javascript
-jupyter_higlass/static/
+higlass_jupyter/static/
 
 # OS X
 .DS_Store
