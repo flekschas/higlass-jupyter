@@ -142,7 +142,12 @@ setup_args = {
         ]),
     ],
     'install_requires': [
-        'ipywidgets>=7.0.0',
+        'jupyter',
+    ],
+    'setup_requires': [
+        'ipython==6.5.0',
+        'jupyter_client',
+        'jsonschema==2.4.0',
     ],
     'packages': find_packages(),
     'zip_safe': False,
