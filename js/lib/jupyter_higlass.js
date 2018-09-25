@@ -57,7 +57,6 @@ var HiGlassDisplayView = widgets.DOMWidgetView.extend({
         // this.hgcontainer.style.lineHeight = '48px';
 
         this.hgdisplay = document.createElement('div');
-        this.hgdisplay.style.height = '600px';
         this.hgdisplay.style.border = '1px solid black';
         this.hgdisplay.style.borderRadius = '1%';
         this.hgdisplay.style.borderColor = '#dddddd';
@@ -70,7 +69,7 @@ var HiGlassDisplayView = widgets.DOMWidgetView.extend({
         hglib.createHgComponent(
             this.hgdisplay,
             JSON.parse(minimalConfig),
-            { bounded: true },
+            { bounded: false },
             function (api) {
                 window.hgApi = api;
             }
