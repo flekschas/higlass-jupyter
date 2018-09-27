@@ -22,6 +22,7 @@ class HiGlassDisplay(widgets.DOMWidget):
 
     _model_data = List([]).tag(sync=True)
     viewconf = Unicode('{}').tag(sync=True)
+    hg_options = Unicode('{ "bounded": true }').tag(sync=True)
 
     def __init__(self, **kwargs):
         # self.viewconf = viewconf

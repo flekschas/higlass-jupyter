@@ -65,11 +65,14 @@ var HiGlassDisplayView = widgets.DOMWidgetView.extend({
         this.el.appendChild(this.hgcontainer);
 
         const minimalConfig = this.model.get('viewconf');
+        const hgOptions = this.model.get('hg_options');
+        
+        console.log('hgOptions:', hgOptions)
 
         hglib.createHgComponent(
             this.hgdisplay,
             JSON.parse(minimalConfig),
-            { bounded: false },
+            JSON.parse(hgOptions),
             function (api) {
                 window.hgApi = api;
             }
