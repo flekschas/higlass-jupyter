@@ -1,0 +1,3 @@
+v0.1.0
+
+- Pass in higlass options using the hg_options parameter to HiGlassDisplay
